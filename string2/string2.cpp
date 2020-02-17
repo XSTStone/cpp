@@ -31,6 +31,7 @@ String::String(const char* s) {
     numStrings++;
 }
 
+//复制构造函数 to initialize a new obj which will be same as s
 String::String(const String & s) {
     numStrings++;
     len = s.len;
@@ -43,6 +44,7 @@ String::~String() {
     delete[] str;
 }
 
+//重载赋值运算符 与复制构造函数相搭配使用 深度复制
 String & String::operator=(const String & s) {
     if(this == &s) {
         return *this;
